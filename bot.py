@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 """
@@ -24,5 +25,6 @@ class MyClient(discord.Client):
         if message.content == 'hello':
             await message.channel.send('Fuck you!')
 
+token = os.getenv("TOKEN")
 client = MyClient()
-client.run("OTQwMjI3ODM1NTY4NzE3ODM1.YgEVaA.mXyv6GDx7tJBWzyW7v6v580xRg0")
+client.run(token)
