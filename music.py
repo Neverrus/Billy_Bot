@@ -64,7 +64,7 @@ class Music(commands.Cog):
         await channel.connect()
 
     @commands.command()
-    async def play(self, ctx, *, query):
+    async def playlocal(self, ctx, *, query):
         """Plays a file from the local filesystem"""
 
         source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(query))
@@ -73,7 +73,7 @@ class Music(commands.Cog):
         await ctx.send(f'Now playing: {query}')
 
     @commands.command()
-    async def yt(self, ctx, *, url):
+    async def ytd(self, ctx, *, url):
         """Plays from a url (almost anything youtube_dl supports)"""
 
         async with ctx.typing():
@@ -83,7 +83,7 @@ class Music(commands.Cog):
         await ctx.send(f'Now playing: {player.title}')
 
     @commands.command()
-    async def stream(self, ctx, *, url):
+    async def play(self, ctx, *, url):
         """Streams from a url (same as yt, but doesn't predownload)"""
 
         async with ctx.typing():
@@ -108,9 +108,9 @@ class Music(commands.Cog):
 
         await ctx.voice_client.disconnect()
 
+    @playlocal.before_invoke
+    @ytd.before_invoke
     @play.before_invoke
-    @yt.before_invoke
-    @stream.before_invoke
     async def ensure_voice(self, ctx):
         if ctx.voice_client is None:
             if ctx.author.voice:
@@ -121,13 +121,15 @@ class Music(commands.Cog):
         elif ctx.voice_client.is_playing():
             ctx.voice_client.stop()
 
+
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("."))
+
 
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user} (ID: {bot.user.id})')
-    print('------')
+    print(f'Logged in ass {bot.user} (ID: {bot.user.id})')
+
 
 bot.add_cog(Music(bot))
-token = os.getenv("TOKEN")
-bot.run(token)
+#token = os.getenv("TOKEN")
+bot.run('OTQwMjI3ODM1NTY4NzE3ODM1.YgEVaA.HeJsbldlpD1wSvA3q_JBWfnCViY')
