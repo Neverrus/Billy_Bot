@@ -1,7 +1,9 @@
 .venv/
 venv/
 .idea/
-
+.cache
+SpotipyClientID.txt
+SpotipyClientSecret.txt
 pycache/
 *.py[cod]
 *$py.class

@@ -121,15 +121,20 @@ class Music(commands.Cog):
         elif ctx.voice_client.is_playing():
             ctx.voice_client.stop()
 
-
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("."))
-
 
 @bot.event
 async def on_ready():
     print(f'Logged in ass {bot.user} (ID: {bot.user.id})')
 
 
+@bot.event
+async def on_message(self, message):
+    if message.author == self.user:
+        return
+    if message.content == 'hello':
+        await message.channel.send('♂Fuck you!♂')
+
 bot.add_cog(Music(bot))
-#token = os.getenv("TOKEN")
-bot.run('OTQwMjI3ODM1NTY4NzE3ODM1.YgEVaA.HeJsbldlpD1wSvA3q_JBWfnCViY')
+token = os.getenv("TOKEN")
+bot.run(token)
