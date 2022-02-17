@@ -13,17 +13,20 @@ async def on_ready():
 async def hello(ctx):
           await ctx.send("Fuck you!")
 """
+
+
 class MyClient(discord.Client):
     async def on_ready(self):
-        print('Logged on ass', self.user)
+        print("Logged on ass", self.user)
 
     async def on_message(self, message):
         # don't respond to ourselves
         if message.author == self.user:
             return
 
-        if message.content == 'hello':
-            await message.channel.send('Fuck you!')
+        if message.content == "hello":
+            await message.channel.send("Fuck you!")
+
 
 token = os.getenv("TOKEN")
 client = MyClient()
