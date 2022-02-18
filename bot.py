@@ -1,5 +1,5 @@
 import os
-from bot.music import Music
+from body.music import Music
 import youtube_dl
 from discord.ext import commands
 

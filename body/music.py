@@ -64,7 +64,7 @@ class Music(commands.Cog):
     async def _summon(
         self, ctx: commands.Context, *, channel: discord.VoiceChannel = None
     ):
-        """Summons the bot to a voice channel.
+        """Summons the body to a voice channel.
         If no channel was specified, it joins your channel.
         """
 

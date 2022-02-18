@@ -490,7 +490,7 @@ class Music(commands.Cog):
     async def _summon(
         self, ctx: commands.Context, *, channel: discord.VoiceChannel = None
     ):
-        """Summons the bot to a voice channel.
+        """Summons the body to a voice channel.
         If no channel was specified, it joins your channel.
         """
 
@@ -765,7 +765,7 @@ class Music(commands.Cog):
         Each title in the list can be clicked as a link.
         async with ctx.typing():
             try:
-                source = await YTDLSource.search_source(ctx, search, loop=self.bot.loop)
+                source = await YTDLSource.search_source(ctx, search, loop=self.body.loop)
             except YTDLError as e:
                 await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
             else:
