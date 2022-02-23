@@ -1,6 +1,5 @@
 import asyncio
 import functools
-from bot import bot
 import discord
 import youtube_dl
 from discord.ext import commands
@@ -156,7 +155,7 @@ class YTDLSource(discord.PCMVolumeTransformer):
 
         em = discord.Embed.from_dict(cls.search)
         await ctx.send(embed=em, delete_after=45.0)
-
+        from bot import bot
         def check(msg):
             return (
                 msg.content.isdigit() == True

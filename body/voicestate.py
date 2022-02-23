@@ -1,10 +1,10 @@
 import asyncio
-from ytdl_source import YTDLSource
-from songqueue import SongQueue
+from body.ytdl_source import YTDLSource
+from body.songqueue import SongQueue
 import discord
 from async_timeout import timeout
 from discord.ext import commands
-
+#from body.music import VoiceError
 
 class VoiceError(Exception):
     pass

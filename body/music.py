@@ -1,17 +1,13 @@
 import math
-from voicestate import VoiceState
+from body.voicestate import VoiceState
 import discord
 from discord.ext import commands
-from spotify import Spotify
-from ytdl_source import YTDLSource
-from song import Song
+from body.spotify import Spotify
+from body.ytdl_source import YTDLSource, YTDLError
+from body.song import Song
 
 
 class VoiceError(Exception):
-    pass
-
-
-class YTDLError(Exception):
     pass
 
 
