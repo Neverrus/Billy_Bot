@@ -7,3 +7,4 @@ SpotipyClientSecret.txt
 pycache/
 *.py[cod]
 *$py.class
+/test files/
