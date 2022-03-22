@@ -9,7 +9,7 @@ import spotipy
 
 youtube_dl.utils.bug_reports_message = lambda: ""
 
-
+"""
 with open("SpotipyClientID.txt", "r") as scid:
     spotipy_id = scid.read().strip()
     scid.close()
@@ -21,8 +21,17 @@ sp = spotipy.Spotify(
         client_id=spotipy_id, client_secret=spotipy_secret
     )
 )
+"""
 
+spotipy_id = os.getenv("SpotipyClientID")
 
+spotipy_secret = os.getenv("SpotipyClientSecret")
+
+sp = spotipy.Spotify(
+    auth_manager=SpotifyClientCredentials(
+        client_id=spotipy_id, client_secret=spotipy_secret
+    )
+)
 class Utils:
     def getCurrentMemoryUsage(self):
         with open("/proc/self/status") as f:
