@@ -1,12 +1,13 @@
-
 class Spotify:
     def getTrackID(self, track):
         from bot import sp
+
         track = sp.track(track)
         return track["id"]
 
     def getPlaylistTrackIDs(self, playlist_id):
         from bot import sp
+
         ids = []
         playlist = sp.playlist(playlist_id)
         for item in playlist["tracks"]["items"]:
@@ -16,6 +17,7 @@ class Spotify:
 
     def getAlbum(self, album_id):
         from bot import sp
+
         album = sp.album_tracks(album_id)
         ids = []
         for item in album["items"]:
@@ -24,6 +26,7 @@ class Spotify:
 
     def getTrackFeatures(self, id):
         from bot import sp
+
         meta = sp.track(id)
         features = sp.audio_features(id)
         name = meta["name"]
@@ -36,4 +39,5 @@ class Spotify:
 
     def getalbumID(self, id):
         from bot import sp
+
         return sp.album(id)

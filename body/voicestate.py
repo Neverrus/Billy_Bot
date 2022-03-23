@@ -4,7 +4,9 @@ from body.songqueue import SongQueue
 import discord
 from async_timeout import timeout
 from discord.ext import commands
-#from body.music import VoiceError
+
+# from body.music import VoiceError
+
 
 class VoiceError(Exception):
     pass

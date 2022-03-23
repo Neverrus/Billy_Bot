@@ -3,7 +3,6 @@ import os
 
 
 class BillyCommands(discord.Client):
-
     async def on_message(self, message):
         if message.author == self.user:
             return

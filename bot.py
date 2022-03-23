@@ -32,6 +32,8 @@ sp = spotipy.Spotify(
         client_id=spotipy_id, client_secret=spotipy_secret
     )
 )
+
+
 class Utils:
     def getCurrentMemoryUsage(self):
         with open("/proc/self/status") as f:
@@ -54,6 +56,7 @@ bot.add_cog(Music(bot))
 @bot.event
 async def on_ready():
     print("Logged in as:\n{0.user.name}\n{0.user.id}".format(bot))
+
 
 if __name__ == "__main__":
     token = os.getenv("TOKEN")
