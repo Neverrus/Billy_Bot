@@ -97,10 +97,10 @@ class Music(commands.Cog):
         if not ctx.voice_state.is_playing:
             return await ctx.send("Nothing being played at the moment.")
 
-        if 0 > volume > 100:
-            return await ctx.send("Volume must be between 0 and 100")
+        if 0 > volume > 200:
+            return await ctx.send("Volume must be between 0 and 200")
 
-        ctx.voice_state.volume = volume / 100
+        ctx.voice_state.volume = volume / 200
         await ctx.send("Volume of the player set to {}%".format(volume))
 
     @commands.command(name="now", aliases=["current", "playing"])
