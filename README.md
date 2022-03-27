@@ -46,8 +46,7 @@ Stops playing song and clears the queue.
 
 ### .skip
 
-Vote to skip a song. The requester can automatically skip.
-3 skip votes are needed for the song to be skipped.
+Skip current song.
 
 ### .queue
 
