@@ -2,7 +2,6 @@ import os
 from body.music import Music
 import youtube_dl
 from discord.ext import commands
-
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 
@@ -34,28 +33,18 @@ sp = spotipy.Spotify(
 )
 
 
-class Utils:
-    def getCurrentMemoryUsage(self):
-        with open("/proc/self/status") as f:
-            memusage = f.read().split("VmRSS:")[1].split("\n")[0][:-3]
-            memusage = int(memusage)
-            return memusage / 1024
-
-    def get_size(self, bytes, suffix="B"):
-        factor = 1024
-        for unit in ["", "K", "M", "G", "T", "P"]:
-            if bytes < factor:
-                return f"{bytes:.2f}{unit}{suffix}"
-            bytes /= factor
-
-
 bot = commands.Bot(command_prefix=".", case_insensitive=True)
 bot.add_cog(Music(bot))
 
 
 @bot.event
 async def on_ready():
-    print("Logged in as:\n{0.user.name}\n{0.user.id}".format(bot))
+    print("Logged in ass:\n{0.user.name}\n{0.user.id}".format(bot))
+
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send("Fuck you!")
 
 
 if __name__ == "__main__":
