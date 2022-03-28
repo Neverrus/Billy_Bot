@@ -4,7 +4,7 @@ Billy_Bot is the Discord music bot written for Python 3.8+, using the youtube_dl
 It plays requested songs from YouTube and other services into a Discord server (or multiple servers).
 The bot features a permission system allowing owners to restrict commands to certain people.
 As well as playing songs, Billy_Bot is capable of streaming live media into a voice channel.
-The commands to control the bot are listed below.
+The commands to control the bot are listed below. The project is deployed on the heroku platform.
 
 ## Commands guide
 ### .join
