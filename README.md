@@ -19,7 +19,7 @@ If no channel was specified, it joins your channel.
 
 Clears the queue and leaves the voice channel.
 
-### .play [youtube Url] or .play [song or video to search for]
+### .play [youtube or spotify Url] or .play [song or video to search for]
 
 Will begin playing the audio of the video/song provided.
 Checks if song is on spotify and then searches.
